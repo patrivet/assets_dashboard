@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "create-react-component": "0.0.4",
+    "create-react-component-folder": "^0.3.5"
   }
 }
