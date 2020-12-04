@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: 50% 50%;
   /* Distribute height -> Graphs 40% : Table 60% */
-  grid-template-rows: 40% 60%;
+  grid-template-rows: auto 40% 60%;
   grid-template-areas:
+    'Header Header'
     'GraphCPU GraphMemory'
     'Table Table';
   /* Device View - allocate 100% of viewport height */
@@ -20,4 +21,8 @@
 
 .table {
   grid-area: Table;
+}
+
+.deviceView__header {
+  grid-area: Header;
 }

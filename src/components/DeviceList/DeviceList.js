@@ -1,7 +1,7 @@
 import './DeviceList.css';
 
 // Custom Components
-import DeviceListItem from '../DeviceListItem';
+import DeviceListItem from '../DeviceListItem/DeviceListItem';
 
 const DeviceList = ({ devices }) => {
   return (
