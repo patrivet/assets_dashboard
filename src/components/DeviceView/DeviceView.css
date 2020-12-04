@@ -1,0 +1,23 @@
+.deviceView {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* Distribute height -> Graphs 40% : Table 60% */
+  grid-template-rows: 40% 60%;
+  grid-template-areas:
+    'GraphCPU GraphMemory'
+    'Table Table';
+  /* Device View - allocate 100% of viewport height */
+  height: 100vh;
+}
+
+.graphCPU {
+  grid-area: GraphCPU;
+}
+
+.graphMemory {
+  grid-area: GraphMemory;
+}
+
+.table {
+  grid-area: Table;
+}

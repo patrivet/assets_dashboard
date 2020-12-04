@@ -1,5 +1,5 @@
 const GraphCPU = () => {
-  return <div>GraphCPU</div>;
+  return <div className="graphCPU">GraphCPU</div>;
 };
 
 export default GraphCPU;

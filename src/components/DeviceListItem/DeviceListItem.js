@@ -1,5 +1,5 @@
-const DeviceListItem = () => {
-  return <div>DeviceListItem</div>;
+const DeviceListItem = ({ device }) => {
+  return <div>{device}</div>;
 };
 
 export default DeviceListItem;

@@ -1,5 +1,5 @@
 const GraphMemory = () => {
-  return <div>GraphMemory</div>;
+  return <div className="graphMemory">GraphMemory</div>;
 };
 
 export default GraphMemory;
