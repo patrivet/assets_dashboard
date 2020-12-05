@@ -9,6 +9,7 @@
     'Table Table';
   /* Device View - allocate 100% of viewport height */
   height: 100vh;
+  width: 70%;
 }
 
 .graphCPU {
