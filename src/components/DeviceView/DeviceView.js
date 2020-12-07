@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { DeviceContext } from '../Dashboard/Dashboard';
 import './DeviceView.css';
 
-// Custom Components
+// Custom Components and context
+import { DeviceContext } from '../Dashboard/Dashboard';
 import GraphCPU from '../GraphCPU/GraphCPU';
 import GraphMemory from '../GraphMemory/GraphMemory';
 import Table from '../Table/Table';
@@ -12,7 +12,9 @@ const DeviceView = () => {
 
   return (
     <div className="deviceView">
-      <h4 className="deviceView__header">{selectedDevice}</h4>
+      <h4 className="deviceView__header">
+        {selectedDevice.name} ({selectedDevice.ipAddress})
+      </h4>
       <GraphCPU />
       <GraphMemory />
       <Table />

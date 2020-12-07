@@ -8,7 +8,7 @@ const DeviceListItem = ({ device }) => {
     setSelectedDevice(device);
   };
 
-  return <div onClick={handleClick}>{device}</div>;
+  return <div onClick={handleClick}>{device.name}</div>;
 };
 
 export default DeviceListItem;
