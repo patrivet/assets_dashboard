@@ -2,11 +2,11 @@ import { useContext } from 'react';
 import Chart from 'react-apexcharts';
 
 // Custom components and context
-import { DeviceContext } from '../Dashboard/Dashboard';
+import { AppContext } from '../Dashboard/Dashboard';
 import { genTimeSeriesData } from '../../utils/helper-functions';
 
 const GraphMemory = () => {
-  const { selectedDevice } = useContext(DeviceContext);
+  const { selectedDevice, now } = useContext(AppContext);
 
   // Substitute (i) xaxis with current time series data.
   // (ii) memory usage for the selected device.
@@ -16,7 +16,7 @@ const GraphMemory = () => {
         id: 'basic-bar',
       },
       xaxis: {
-        categories: genTimeSeriesData(10),
+        categories: genTimeSeriesData(10, now),
       },
     },
     series: [

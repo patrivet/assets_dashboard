@@ -1,19 +1,19 @@
 import { DateTime } from 'luxon';
 
 /* Returns an array of 'num' strings representing the previous 'num' units of time,
-starting from current time.
+starting from passed in dateTime.
 For now -Units are defaulted to minutes with an interval of 1. */
-const genTimeSeriesData = (num) => {
-  const now = DateTime.local();
-  let timeArr = [];
+const genTimeSeriesData = (num, dateTimeToUse) => {
+  // const now = DateTime.local();
+  let timeStrings = [];
 
   for (let i = num - 1; i >= 0; i--) {
-    const previousTime = now
+    const previousTime = dateTimeToUse
       .minus({ minutes: i })
       .toLocaleString(DateTime.TIME_24_SIMPLE);
-    timeArr.push(previousTime);
+    timeStrings.push(previousTime);
   }
-  return timeArr;
+  return timeStrings;
 };
 
 export { genTimeSeriesData };

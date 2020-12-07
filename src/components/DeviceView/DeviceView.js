@@ -2,13 +2,13 @@ import { useContext } from 'react';
 import './DeviceView.css';
 
 // Custom Components and context
-import { DeviceContext } from '../Dashboard/Dashboard';
+import { AppContext } from '../Dashboard/Dashboard';
 import GraphCPU from '../GraphCPU/GraphCPU';
 import GraphMemory from '../GraphMemory/GraphMemory';
 import Table from '../Table/Table';
 
 const DeviceView = () => {
-  const { selectedDevice } = useContext(DeviceContext);
+  const { selectedDevice } = useContext(AppContext);
 
   return (
     <div className="deviceView">

@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { DeviceContext } from '../Dashboard/Dashboard';
+import { AppContext } from '../Dashboard/Dashboard';
 
 const DeviceListItem = ({ device }) => {
-  const { setSelectedDevice } = useContext(DeviceContext);
+  const { setSelectedDevice } = useContext(AppContext);
 
   const handleClick = () => {
     setSelectedDevice(device);
