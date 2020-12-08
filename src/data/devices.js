@@ -33,7 +33,7 @@ const devicesData = {
       memoryUsage: [600, 500, 900, 100, 250, 350, 70, 800, 25, 500],
       programs: [
         {
-          name: 'Google Chrome',
+          name: 'Mozilla Firefox',
           startTime: '2020-12-07:00:21',
           cpuUsage: 10,
           memoryUsage: 500,
@@ -59,7 +59,7 @@ const devicesData = {
       memoryUsage: [800, 900, 1000, 600, 300, 350, 102, 600, 150, 100],
       programs: [
         {
-          name: 'Google Chrome',
+          name: 'Slack',
           startTime: '2020-12-07:00:21',
           cpuUsage: 10,
           memoryUsage: 500,

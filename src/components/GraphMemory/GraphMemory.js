@@ -21,7 +21,7 @@ const GraphMemory = () => {
     },
     series: [
       {
-        name: 'series-1',
+        name: 'Memory Usage',
         data: selectedDevice.memoryUsage,
       },
     ],

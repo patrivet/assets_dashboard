@@ -5,7 +5,7 @@ import './DeviceView.css';
 import { AppContext } from '../Dashboard/Dashboard';
 import GraphCPU from '../GraphCPU/GraphCPU';
 import GraphMemory from '../GraphMemory/GraphMemory';
-import Table from '../Table/Table';
+import ProgramsTable from '../ProgramsTable/ProgramsTable';
 
 const DeviceView = () => {
   const { selectedDevice } = useContext(AppContext);
@@ -17,7 +17,7 @@ const DeviceView = () => {
       </h4>
       <GraphCPU />
       <GraphMemory />
-      <Table />
+      <ProgramsTable />
     </div>
   );
 };

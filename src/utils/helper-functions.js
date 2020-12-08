@@ -4,7 +4,6 @@ import { DateTime } from 'luxon';
 starting from passed in dateTime.
 For now -Units are defaulted to minutes with an interval of 1. */
 const genTimeSeriesData = (num, dateTimeToUse) => {
-  // const now = DateTime.local();
   let timeStrings = [];
 
   for (let i = num - 1; i >= 0; i--) {

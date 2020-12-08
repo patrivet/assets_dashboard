@@ -21,7 +21,7 @@ const GraphCPU = () => {
     },
     series: [
       {
-        name: 'series-1',
+        name: 'CPU Usage',
         data: selectedDevice.cpuUsage,
       },
     ],
