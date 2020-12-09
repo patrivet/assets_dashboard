@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import Chart from 'react-apexcharts';
+import './GraphMemory.css';
 
 // Custom components and context
 import { AppContext } from '../Dashboard/Dashboard';
@@ -26,9 +27,10 @@ const GraphMemory = () => {
       },
     ],
   };
+
   return (
     <div className="graphMemory">
-      Memory
+      Memory Usage
       <Chart
         options={chartData.options}
         series={chartData.series}

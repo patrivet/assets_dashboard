@@ -1,3 +1,11 @@
 .programsTable__headerCell {
   cursor: pointer;
 }
+
+h4.programsTable__label {
+  color: #60a6dd;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

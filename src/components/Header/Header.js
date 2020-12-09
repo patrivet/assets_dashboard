@@ -5,8 +5,10 @@ const Header = () => {
   const handleClick = () => {
     // Toggle show/hide of DeviceList
     const deviceListNode = document.getElementById('deviceList');
-    // Toggle the hide class
+    const deviceView = document.getElementsByClassName('deviceView')[0];
+    // Toggle the hide handling classes
     deviceListNode.classList.toggle('deviceList--hide');
+    deviceView.classList.toggle('deviceView__only');
   };
 
   return (

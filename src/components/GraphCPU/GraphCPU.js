@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import Chart from 'react-apexcharts';
+import './GraphCPU.css';
 
 // Custom components and context
 import { AppContext } from '../Dashboard/Dashboard';
@@ -28,17 +29,15 @@ const GraphCPU = () => {
   };
 
   return (
-    <>
-      <div className="graphCPU">
-        CPU
-        <Chart
-          options={chartData.options}
-          series={chartData.series}
-          type="line"
-          height="90%"
-        />
-      </div>
-    </>
+    <div className="graphCPU">
+      CPU Usage
+      <Chart
+        options={chartData.options}
+        series={chartData.series}
+        type="line"
+        height="90%"
+      />
+    </div>
   );
 };
 

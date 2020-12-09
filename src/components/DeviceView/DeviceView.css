@@ -10,6 +10,14 @@
   /* Device View - allocate 100% of viewport height */
   height: 100vh;
   width: 70%;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+/* DeviceView only - stretch to cover hidden device list. */
+.deviceView.deviceView__only {
+  width: 100%;
+  margin-left: 20px;
 }
 
 .graphCPU {
@@ -26,4 +34,13 @@
 
 .deviceView__header {
   grid-area: Header;
+  background-color: #60a6dd;
+  color: white;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+h4.deviceView__header {
+  margin-top: 15px;
 }

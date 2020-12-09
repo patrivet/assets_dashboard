@@ -99,49 +99,52 @@ const ProgramsTable = () => {
   const classes = useStyles();
 
   return (
-    <TableContainer className="programsTable" component={Paper}>
-      <Table className={classes.table} aria-label="programs table">
-        <TableHead>
-          <TableRow>
-            {headerColumns.map((col, i) => (
-              <StyledTableCell key={`hdr-col-${i}`}>
-                <div
-                  className="programsTable__headerCell"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                  }}
-                  onClick={() => {
-                    updateSort(col.prop);
-                  }}
-                >
-                  <span>{col.name}</span>
-                  {state.columnToSort === col.prop ? (
-                    state.sortDirection === 'asc' ? (
-                      <ArrowDropUp />
-                    ) : (
-                      <ArrowDropDown />
-                    )
-                  ) : null}
-                </div>
-              </StyledTableCell>
+    <div className="programsTable">
+      <h4 className="programsTable__label">Currently running Programs</h4>
+      <TableContainer className="programsTable__tableCon" component={Paper}>
+        <Table className={classes.table} aria-label="programs table">
+          <TableHead>
+            <TableRow>
+              {headerColumns.map((col, i) => (
+                <StyledTableCell key={`hdr-col-${i}`}>
+                  <div
+                    className="programsTable__headerCell"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                    onClick={() => {
+                      updateSort(col.prop);
+                    }}
+                  >
+                    <span>{col.name}</span>
+                    {state.columnToSort === col.prop ? (
+                      state.sortDirection === 'asc' ? (
+                        <ArrowDropUp />
+                      ) : (
+                        <ArrowDropDown />
+                      )
+                    ) : null}
+                  </div>
+                </StyledTableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {applySort(rows).map((row) => (
+              <StyledTableRow key={row.name}>
+                <StyledTableCell component="th" scope="row">
+                  {row.name}
+                </StyledTableCell>
+                <StyledTableCell>{row.startTime}</StyledTableCell>
+                <StyledTableCell>{row.cpuUsage}</StyledTableCell>
+                <StyledTableCell>{row.memoryUsage}</StyledTableCell>
+              </StyledTableRow>
             ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {applySort(rows).map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell>{row.startTime}</StyledTableCell>
-              <StyledTableCell>{row.cpuUsage}</StyledTableCell>
-              <StyledTableCell>{row.memoryUsage}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 };
 
