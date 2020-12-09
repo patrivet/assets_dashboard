@@ -137,8 +137,12 @@ const ProgramsTable = () => {
                   {row.name}
                 </StyledTableCell>
                 <StyledTableCell>{row.startTime}</StyledTableCell>
-                <StyledTableCell>{row.cpuUsage}</StyledTableCell>
-                <StyledTableCell>{row.memoryUsage}</StyledTableCell>
+                <StyledTableCell>
+                  {row.cpuUsage[row.cpuUsage.length - 1]}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {row.memoryUsage[row.memoryUsage.length - 1]}
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

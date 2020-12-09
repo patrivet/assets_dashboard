@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { DateTime } from 'luxon';
 import './Dashboard.css';
 
@@ -9,11 +9,14 @@ import DeviceView from '../DeviceView/DeviceView';
 
 // Other files
 import devicesData from '../../data/devices';
+import { createInitalRandomData } from '../../utils/helper-functions';
 
 // Create context for the selected device & it's setter function.
 export const AppContext = createContext();
 
 const Dashboard = () => {
+  const [isReady, setIsReady] = useState(false);
+
   // Get the devices
   let devices = devicesData.devices;
 
@@ -30,13 +33,33 @@ const Dashboard = () => {
     now,
   };
 
+  // Call function to generate data for Devices and their programs
+  useEffect(() => {
+    createInitalRandomData(devices).then(() => {
+      setIsReady(true);
+    });
+  }, []);
+
   return (
     <AppContext.Provider value={appContextVals}>
       <Header />
-      <div className="dashboard">
-        <DeviceList devices={devices} />
-        <DeviceView />
-      </div>
+      {isReady ? (
+        <>
+          <div className="dashboard">
+            <DeviceList devices={devices} />
+            <DeviceView />
+          </div>
+        </>
+      ) : (
+        <h2
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          Fetching Data
+        </h2>
+      )}
     </AppContext.Provider>
   );
 };

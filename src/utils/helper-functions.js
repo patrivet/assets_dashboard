@@ -15,4 +15,44 @@ const genTimeSeriesData = (num, dateTimeToUse) => {
   return timeStrings;
 };
 
-export { genTimeSeriesData };
+/*
+Generates an array of 'numVals' random numbers,
+no larger than 'maxval'
+*/
+function generateRandomVals(numVals, maxVal) {
+  // Add one to maxVal if a positive value was passed.
+  if (maxVal) maxVal += 1;
+
+  let randomVals = [];
+  for (let i = 0; i < numVals; i++) {
+    let nextVal = maxVal
+      ? Math.floor(Math.random() * Math.floor(maxVal))
+      : Math.random();
+    randomVals.push(nextVal);
+  }
+  return randomVals;
+}
+
+/* Sets random data on Device's programs, and roll up values onto each Device. */
+async function createInitalRandomData(devices) {
+  devices.forEach((nextDevice) => {
+    // init Device's CPU and memory arrays to a blank size 10 array
+    nextDevice.cpuUsage = new Array(10).fill(0);
+    nextDevice.memoryUsage = new Array(10).fill(0);
+
+    nextDevice.programs.forEach((nextProgram) => {
+      nextProgram.cpuUsage.push(...generateRandomVals(10, 25));
+      nextProgram.memoryUsage.push(...generateRandomVals(10, 200));
+      // Sum the program data on the device
+      nextDevice.cpuUsage = nextDevice.cpuUsage.map(
+        (nextVal, i) => nextVal + nextProgram.cpuUsage[i]
+      );
+
+      nextDevice.memoryUsage = nextDevice.memoryUsage.map(
+        (nextVal, i) => nextVal + nextProgram.memoryUsage[i]
+      );
+    });
+  });
+}
+
+export { genTimeSeriesData, generateRandomVals, createInitalRandomData };
