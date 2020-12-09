@@ -10,3 +10,19 @@
   visibility: hidden;
   width: 0px;
 }
+
+h3.deviceList__title {
+  margin: 0;
+  padding: 8px;
+}
+
+p.deviceList__search {
+  margin: 0;
+  padding: 8px;
+}
+
+.deviceList__inner {
+  /* allocate 100% height after header and devices label */
+  height: calc(95vh -150px);
+  overflow: hidden;
+}

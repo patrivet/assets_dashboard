@@ -16,7 +16,7 @@ const Header = () => {
         className="header__hamburger"
         style={{ fontSize: 32 }}
       />
-      <h1 className="header__text">Devices Dashboard</h1>
+      <h2 className="header__text">Devices Dashboard</h2>
     </div>
   );
 };
