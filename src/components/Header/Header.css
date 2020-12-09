@@ -1,0 +1,22 @@
+.header {
+  font-weight: 600;
+  background-color: #1876d2;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.header__hamburger {
+  padding: 0 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.header__text {
+  font-weight: 600;
+}
+
+/* Custom margin for this h1 */
+h1.header__text {
+  margin: 10px 0;
+}

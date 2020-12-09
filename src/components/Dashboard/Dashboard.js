@@ -3,6 +3,7 @@ import { DateTime } from 'luxon';
 import './Dashboard.css';
 
 // Custom components
+import Header from '../Header/Header';
 import DeviceList from '../DeviceList/DeviceList';
 import DeviceView from '../DeviceView/DeviceView';
 
@@ -31,6 +32,7 @@ const Dashboard = () => {
 
   return (
     <AppContext.Provider value={appContextVals}>
+      <Header />
       <div className="dashboard">
         <DeviceList devices={devices} />
         <DeviceView />
