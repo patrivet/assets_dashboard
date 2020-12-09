@@ -16,13 +16,18 @@ const Dashboard = () => {
   // Get the devices
   let devices = devicesData.devices;
 
-  // Define state for the selected device. Init to 1st device in array.
+  /* Define values for context across the app. */
+  // -The selected device. Init to 1st device in array.
   const [selectedDevice, setSelectedDevice] = useState(devices[0]);
 
-  // Store current timeStamp
+  // -Current timeStamp
   const now = DateTime.local();
 
-  const appContextVals = { selectedDevice, setSelectedDevice, now };
+  const appContextVals = {
+    selectedDevice,
+    setSelectedDevice,
+    now,
+  };
 
   return (
     <AppContext.Provider value={appContextVals}>

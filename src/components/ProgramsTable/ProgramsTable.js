@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -6,10 +6,11 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons';
-
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import orderBy from 'lodash/orderBy';
+
+import './ProgramsTable.css';
 
 // Custom components & context
 import { AppContext } from '../Dashboard/Dashboard';
@@ -65,6 +66,8 @@ const invertDirection = {
   asc: 'desc',
   desc: 'asc',
 };
+// Default/initial table state.
+const initalState = { columnToSort: 'name', sortDirection: 'asc' };
 
 const ProgramsTable = () => {
   const { selectedDevice } = useContext(AppContext);
@@ -72,10 +75,12 @@ const ProgramsTable = () => {
   const rows = selectedDevice.programs;
 
   // State for holding sorting values.
-  const [state, setState] = useState({
-    columnToSort: 'name', // Default to 1st column
-    sortDirection: 'asc', // Default to ascending
-  });
+  const [state, setState] = useState({});
+
+  // Set the table state when this component mounts (when selectedDevice changes)
+  useEffect(() => {
+    setState(initalState);
+  }, [selectedDevice]);
 
   // Sorting handler operations
   const updateSort = (columnProp) => {
@@ -94,13 +99,14 @@ const ProgramsTable = () => {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer className="programsTable" component={Paper}>
       <Table className={classes.table} aria-label="programs table">
         <TableHead>
           <TableRow>
             {headerColumns.map((col, i) => (
               <StyledTableCell key={`hdr-col-${i}`}>
                 <div
+                  className="programsTable__headerCell"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
