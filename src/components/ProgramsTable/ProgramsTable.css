@@ -9,3 +9,7 @@ h4.programsTable__label {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.programsTable__tableCon {
+  max-height: 35vh;
+}

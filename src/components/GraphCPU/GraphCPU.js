@@ -1,13 +1,10 @@
-import { useContext } from 'react';
 import Chart from 'react-apexcharts';
 import './GraphCPU.css';
 
-// Custom components and context
-import { AppContext } from '../Dashboard/Dashboard';
-import { genTimeSeriesData } from '../../utils/helper-functions';
-
-const GraphCPU = () => {
-  const { selectedDevice, now } = useContext(AppContext);
+const GraphCPU = ({ deviceData, timeSeries }) => {
+  const arrLen = deviceData.length;
+  // Set series data to be the last 10 values
+  deviceData = deviceData.slice(arrLen - 10, arrLen);
 
   // Substitute (i) xaxis with current time series data.
   // (ii) cpu usage for the selected device.
@@ -17,13 +14,13 @@ const GraphCPU = () => {
         id: 'basic-bar',
       },
       xaxis: {
-        categories: genTimeSeriesData(10, now),
+        categories: timeSeries,
       },
     },
     series: [
       {
         name: 'CPU Usage',
-        data: selectedDevice.cpuUsage,
+        data: deviceData,
       },
     ],
   };

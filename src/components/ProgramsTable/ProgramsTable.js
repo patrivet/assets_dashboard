@@ -102,7 +102,11 @@ const ProgramsTable = () => {
     <div className="programsTable">
       <h4 className="programsTable__label">Currently running Programs</h4>
       <TableContainer className="programsTable__tableCon" component={Paper}>
-        <Table className={classes.table} aria-label="programs table">
+        <Table
+          stickyHeader
+          className={classes.table}
+          aria-label="programs table"
+        >
           <TableHead>
             <TableRow>
               {headerColumns.map((col, i) => (

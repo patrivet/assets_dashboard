@@ -33,12 +33,12 @@ const Dashboard = () => {
     now,
   };
 
-  // Call function to generate data for Devices and their programs
   useEffect(() => {
-    createInitalRandomData(devices).then(() => {
+    // Call function to generate 10 points of data for Devices and their programs
+    createInitalRandomData(devices, 10).then(() => {
       setIsReady(true);
     });
-  }, []);
+  });
 
   return (
     <AppContext.Provider value={appContextVals}>
