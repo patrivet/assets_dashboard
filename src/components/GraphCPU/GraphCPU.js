@@ -11,10 +11,31 @@ const GraphCPU = ({ deviceData, timeSeries }) => {
   const chartData = {
     options: {
       chart: {
-        id: 'basic-bar',
+        id: 'basic-area',
+        dropShadow: {
+          enabled: true,
+          top: 0,
+          left: 0,
+          blur: 3,
+          opacity: 0.5,
+        },
       },
       xaxis: {
         categories: timeSeries,
+      },
+      colors: ['#00E396'],
+      dataLabels: {
+        enabled: false,
+      },
+      yaxis: {
+        title: {
+          text: 'CPU (%)',
+          style: {
+            fontSize: '12px',
+            fontFamily: 'Roboto, sans-serif',
+            fontWeight: 400,
+          },
+        },
       },
     },
     series: [
@@ -31,7 +52,7 @@ const GraphCPU = ({ deviceData, timeSeries }) => {
       <Chart
         options={chartData.options}
         series={chartData.series}
-        type="line"
+        type="area"
         height="90%"
       />
     </div>

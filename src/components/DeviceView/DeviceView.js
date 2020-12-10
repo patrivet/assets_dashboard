@@ -14,16 +14,27 @@ import {
 
 const DeviceView = () => {
   const { selectedDevice } = useContext(AppContext);
+
+  const [now, setNow] = useState(DateTime.local());
+
   const [deviceData, setDeviceData] = useState({
     cpuUsage: selectedDevice.cpuUsage,
     memoryUsage: selectedDevice.memoryUsage,
   });
-  const [now, setNow] = useState(DateTime.local());
 
   useEffect(() => {
-    /* Each time the deviceData changes - wait this timeout
-    and then add new random values to the end of the arrays */
-    setTimeout(() => {
+    // Set state when the selectedDevice changes.
+    setDeviceData((currState) => ({
+      cpuUsage: selectedDevice.cpuUsage,
+      memoryUsage: selectedDevice.memoryUsage,
+    }));
+    setNow(DateTime.local());
+  }, [selectedDevice]);
+
+  useEffect(() => {
+    /* Each time the deviceData changes - create an interval to
+    add new random values to the end of the arrays */
+    const interval = setInterval(() => {
       // Generate a single random value for cpuUsage and memoryUsage
       const cpuVal = generateRandomVals(1, 120)[0];
       const memVal = generateRandomVals(1, 800)[0];
@@ -37,6 +48,9 @@ const DeviceView = () => {
       // Set current time in local state.
       setNow(DateTime.local());
     }, 60000);
+    return () => {
+      window.clearInterval(interval);
+    };
   }, [deviceData]);
 
   return (
