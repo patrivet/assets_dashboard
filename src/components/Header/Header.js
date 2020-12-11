@@ -1,5 +1,6 @@
 import './Header.css';
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
 
 const Header = () => {
   const handleClick = () => {
@@ -13,11 +14,16 @@ const Header = () => {
 
   return (
     <div className="header">
-      <MenuRoundedIcon
-        onClick={() => handleClick()}
-        className="header__hamburger"
-        style={{ fontSize: 32 }}
-      />
+      <div className="header__hamburger" style={{ fontSize: 32 }}>
+        <IconButton
+          onClick={() => handleClick()}
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+        >
+          <MenuIcon />
+        </IconButton>
+      </div>
       <h2 className="header__text">Devices Dashboard</h2>
     </div>
   );
