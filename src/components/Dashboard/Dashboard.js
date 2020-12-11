@@ -51,14 +51,16 @@ const Dashboard = () => {
           </div>
         </>
       ) : (
-        <h2
+        <h4
           style={{
             display: 'flex',
             justifyContent: 'center',
+            fontStyle: 'italic',
+            fontWeight: 'regular',
           }}
         >
           Fetching Data
-        </h2>
+        </h4>
       )}
     </AppContext.Provider>
   );

@@ -15,10 +15,10 @@
 
 h3.deviceList__title {
   margin: 0;
-  padding: 8px;
+  padding: 8px 8px 0 8px;
 }
 
-p.deviceList__search {
+.deviceList__search {
   margin: 0;
-  padding: 8px;
+  padding: 0 8px;
 }

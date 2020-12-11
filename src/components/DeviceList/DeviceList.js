@@ -1,8 +1,9 @@
 import { useContext, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, fade } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import TextField from '@material-ui/core/TextField';
 
 import './DeviceList.css';
 
@@ -21,19 +22,41 @@ const DeviceList = ({ devices }) => {
   const classes = useStyles();
   const { setSelectedDevice } = useContext(AppContext);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [devicesToUse, setDevicesToUse] = useState(devices);
 
   const handleListItemClick = (index, device) => {
     setSelectedIndex(index);
     setSelectedDevice(device);
   };
 
+  const handleSearchEntry = (event) => {
+    // Get the search string and set device names containing the string to state prop.
+    const { value } = event.target;
+
+    const filteredDevices = devices.filter(
+      (device) => device.name.indexOf(value) > -1
+    );
+    setDevicesToUse(filteredDevices);
+  };
+
   return (
     <div id="deviceList" className="deviceList">
       <h3 className="deviceList__title">Devices</h3>
-      <p className="deviceList__search">Search</p>
+      <div className="deviceList__search">
+        <TextField
+          id="outlined-search"
+          label="Search"
+          type="search"
+          variant="outlined"
+          onChange={handleSearchEntry}
+          autoComplete="off"
+          margin="dense"
+        />
+      </div>
+
       <div className={`deviceList__inner ${classes.root}`}>
         <List component="nav" aria-label="devices">
-          {devices.map((device, i) => {
+          {devicesToUse.map((device, i) => {
             return (
               <ListItem
                 button
