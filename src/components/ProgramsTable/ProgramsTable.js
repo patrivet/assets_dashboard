@@ -51,12 +51,12 @@ const headerColumns = [
   },
   {
     name: 'CPU Usage (%)',
-    prop: 'cpuUsage',
+    prop: 'lastCpuUsage',
     align: 'right',
   },
   {
     name: 'Memory Usage (Bytes)',
-    prop: 'memoryUsage',
+    prop: 'lastMemoryUsage',
     align: 'right',
   },
 ];
@@ -83,7 +83,7 @@ const ProgramsTable = () => {
   }, [selectedDevice]);
 
   // Sorting handler operations
-  const updateSort = (columnProp) => {
+  const updateSortSettings = (columnProp) => {
     setState((currState) => ({
       columnToSort: columnProp,
       sortDirection:
@@ -118,7 +118,7 @@ const ProgramsTable = () => {
                       alignItems: 'center',
                     }}
                     onClick={() => {
-                      updateSort(col.prop);
+                      updateSortSettings(col.prop);
                     }}
                   >
                     <span>{col.name}</span>
@@ -141,12 +141,8 @@ const ProgramsTable = () => {
                   {row.name}
                 </StyledTableCell>
                 <StyledTableCell>{row.startTime}</StyledTableCell>
-                <StyledTableCell>
-                  {row.cpuUsage[row.cpuUsage.length - 1]}
-                </StyledTableCell>
-                <StyledTableCell>
-                  {row.memoryUsage[row.memoryUsage.length - 1]}
-                </StyledTableCell>
+                <StyledTableCell>{row.lastCpuUsage}</StyledTableCell>
+                <StyledTableCell>{row.lastMemoryUsage}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

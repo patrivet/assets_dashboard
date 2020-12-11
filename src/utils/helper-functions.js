@@ -44,6 +44,9 @@ async function createInitalRandomData(devices, numVals) {
     nextDevice.programs.forEach((nextProgram) => {
       nextProgram.cpuUsage = generateRandomVals(numVals, 25);
       nextProgram.memoryUsage = generateRandomVals(numVals, 200);
+      // Store the last usage stats on a seperate propertt
+      nextProgram.lastCpuUsage = nextProgram.cpuUsage[numVals - 1];
+      nextProgram.lastMemoryUsage = nextProgram.memoryUsage[numVals - 1];
 
       // Sum the program data on the device
       nextDevice.cpuUsage = nextDevice.cpuUsage.map(
