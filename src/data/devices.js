@@ -43,7 +43,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-12-07:00:21',
           cpuUsage: [],
           memoryUsage: [],
@@ -155,7 +155,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -200,7 +200,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -244,7 +244,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -288,7 +288,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -332,7 +332,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -376,7 +376,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -420,7 +420,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -464,7 +464,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -508,7 +508,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -552,7 +552,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -596,7 +596,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -640,7 +640,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],
@@ -684,7 +684,7 @@ const devicesData = {
           memoryUsage: [],
         },
         {
-          name: 'i-Tunes',
+          name: 'Postman',
           startTime: '2020-10-10:10:57',
           cpuUsage: [],
           memoryUsage: [],

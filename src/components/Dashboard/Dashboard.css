@@ -1,3 +1,7 @@
 .dashboard {
   display: flex;
+  /* Set dashboard component to fill vertical viewpoint
+  less the height of the header. Hide overflow, so there is no scrolling. */
+  max-height: calc(99vh - 65px);
+  overflow: hidden;
 }

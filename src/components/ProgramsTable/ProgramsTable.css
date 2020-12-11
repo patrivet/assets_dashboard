@@ -11,5 +11,6 @@ h4.programsTable__label {
 }
 
 .programsTable__tableCon {
-  max-height: 35vh;
+  height: 100%;
+  overflow: scroll;
 }

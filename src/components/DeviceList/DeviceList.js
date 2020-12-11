@@ -22,7 +22,7 @@ const DeviceList = ({ devices }) => {
   const { setSelectedDevice } = useContext(AppContext);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const handleListItemClick = (_, index, device) => {
+  const handleListItemClick = (index, device) => {
     setSelectedIndex(index);
     setSelectedDevice(device);
   };
@@ -38,7 +38,7 @@ const DeviceList = ({ devices }) => {
               <ListItem
                 button
                 selected={selectedIndex === i}
-                onClick={(event) => handleListItemClick(event, i, device)}
+                onClick={() => handleListItemClick(i, device)}
               >
                 <ListItemText
                   primary={device.name}

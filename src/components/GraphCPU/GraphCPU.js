@@ -3,11 +3,9 @@ import './GraphCPU.css';
 
 const GraphCPU = ({ deviceData, timeSeries }) => {
   const arrLen = deviceData.length;
-  // Set series data to be the last 10 values
+  // Set device data to be the last 10 values
   deviceData = deviceData.slice(arrLen - 10, arrLen);
 
-  // Substitute (i) xaxis with current time series data.
-  // (ii) cpu usage for the selected device.
   const chartData = {
     options: {
       chart: {
@@ -21,6 +19,7 @@ const GraphCPU = ({ deviceData, timeSeries }) => {
         },
       },
       xaxis: {
+        // Substitute current time series data.
         categories: timeSeries,
       },
       colors: ['#00E396'],
@@ -37,10 +36,20 @@ const GraphCPU = ({ deviceData, timeSeries }) => {
           },
         },
       },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: 0.5,
+          opacityTo: 0.9,
+          stops: [0, 95, 100],
+        },
+      },
     },
     series: [
       {
         name: 'CPU Usage',
+        // Cpu usage for the selected device.
         data: deviceData,
       },
     ],

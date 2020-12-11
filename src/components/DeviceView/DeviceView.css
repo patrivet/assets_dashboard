@@ -7,9 +7,9 @@
     'Header Header'
     'GraphCPU GraphMemory'
     'Table Table';
-  /* Device View - allocate 100% of viewport height */
-  height: 100vh;
-  width: 70%;
+  /* Device View - viewport height -less header height and margin of this component. */
+  height: calc(97vh - 150px);
+  width: 80%;
   margin-right: 20px;
   margin-left: 10px;
 }
