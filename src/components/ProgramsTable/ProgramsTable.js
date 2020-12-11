@@ -5,7 +5,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
-import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import orderBy from 'lodash/orderBy';
@@ -122,13 +122,10 @@ const ProgramsTable = () => {
                     }}
                   >
                     <span>{col.name}</span>
-                    {state.columnToSort === col.prop ? (
-                      state.sortDirection === 'asc' ? (
-                        <ArrowDropUp />
-                      ) : (
-                        <ArrowDropDown />
-                      )
-                    ) : null}
+                    <TableSortLabel
+                      active={state.columnToSort === col.prop}
+                      direction={state.sortDirection}
+                    ></TableSortLabel>
                   </div>
                 </StyledTableCell>
               ))}

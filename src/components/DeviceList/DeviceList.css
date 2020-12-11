@@ -3,7 +3,8 @@
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  transition: width 0.4s;
+  /* ease-in slow at the beginning, faster at the end */
+  transition: width 0.4s ease-in;
 }
 
 /* Hide the Component */
