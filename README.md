@@ -1,24 +1,30 @@
 
 # Asset CPU and Memory Dashboard	
-Tennis Club Ladder is web application which allows a tennis club to setup and run an internal singles challenge ladder.
-Players can see who is available to play, send and accept challenges to play, record results and see a filtered list of ladder updates.
+Single page application written in React, showing a live feed of CPU and memory usage on devices and their running programs.  Design based on a [Kubernetes resources dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
 
+## Features
+This dashboard allows any device to be selected from the left hand side, after which the device's CPU, memory and programs are then shown.
+The CPU and memory usage updates each minute and the programs table can be sorted on each column.
+Pressing the humburger in the top left hand corner show/hides the device list panel.
+
+## Hosting
 See the app hosted [here](https://device-dashboard-pr.netlify.app)
 
-Created by:  [Pat Rivet](https://www.linkedin.com/in/pat-rivet/)
+Created by Pat Rivet: [Github](https://github.com/patrivet/) | [Linkedin](https://www.linkedin.com/in/pat-rivet/)
 
-## Screenshots:
+
+## Screenshot(s):
 ![Screenshot one](/assets/screenshots/Screenshot_1.png)
 
 ## How to run:
 
- - Clone this repo ```git clone https://github.com/patrivet/assets_dashboard.git```
- - ```npm install``` in the client directory.
-
+ 1. Clone this repo ```git clone https://github.com/patrivet/assets_dashboard.git```
+ 2. Install ```npm install```
+ 3. Run app ```npm start```
+ 
 
 ## Built using:
-
-- React
-- React-Context
-- Material-UI
-- ![Apex Charts](https://apexcharts.com/)
+- [React v17.0.1](https://reactjs.org/)
+- [React-Context](https://reactjs.org/docs/context.html)
+- [Material-UI](https://material-ui.com/)
+- [Apex Charts](https://apexcharts.com/)
